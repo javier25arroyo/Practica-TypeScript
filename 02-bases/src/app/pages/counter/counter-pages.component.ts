@@ -2,18 +2,27 @@ import { Component } from "@angular/core";
 
 
 @Component({
-  template:`
-    <h1>Counter:{{ counter}} </h1>
-    <!-- El valor de 4 incrementa el contador -->
-    <button (click)="incresaBy(1)" >+ 1 </button> 
-    `,
+  templateUrl: './counter-pages.component.html',
+
+  styles: `
+    button {
+      margin: 5px;
+      margin: 5px 10px;
+      width: 75px;
+    }
+  `,
 })
+
 export class CounterPagesComponent {
-
-  counter = 0;
-
-  incresaBy(value: number) {
+  
+  incresaseBy(value: number) {
     this.counter += value;
   }
+
+  reset() {
+    this.counter = 0;
+  }
+
+  counter = 0;
 
 }
